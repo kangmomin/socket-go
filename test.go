@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"time"
 )
 
 func main() {
@@ -24,7 +23,6 @@ func main() {
 			}
 
 			log.Println("Server send : " + string(data[:n]))
-			time.Sleep(time.Duration(3) * time.Second)
 		}
 	}()
 
@@ -32,6 +30,5 @@ func main() {
 		var s string
 		fmt.Scanln(&s)
 		conn.Write([]byte(s))
-		time.Sleep(time.Duration(3) * time.Second)
 	}
 }

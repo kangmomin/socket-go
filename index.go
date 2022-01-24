@@ -46,8 +46,10 @@ func ConnHandler(conn net.Conn) {
 }
 
 func SendMsg(conn net.Conn) {
-	msg := ""
-	fmt.Scan(&msg)
+	for {
+		msg := ""
+		fmt.Scan(&msg)
 
-	conn.Write([]byte(msg))
+		conn.Write([]byte(msg))
+	}
 }
